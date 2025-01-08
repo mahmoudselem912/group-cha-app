@@ -8,7 +8,7 @@ const PhoneAuth = () => {
   const [confirmationResult, setConfirmationResult] = useState(null);
 
   const sendOtp = async () => {
-    setupRecaptcha();
+    await setupRecaptcha();
     const appVerifier = window.recaptchaVerifier;
 
     try {

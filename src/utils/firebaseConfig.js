@@ -18,7 +18,7 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 // Setup Recaptcha
-export const setupRecaptcha = () => {
+export const setupRecaptcha = async () => {
   if (typeof window !== 'undefined') {
     const recaptchaContainer = document.getElementById('recaptcha-container');
 
@@ -38,9 +38,11 @@ export const setupRecaptcha = () => {
         },
       );
 
-      recaptchaVerifier.render().then(() => {
+      await recaptchaVerifier.render().then(() => {
         console.log('reCAPTCHA rendered');
       });
+      
+      window.recaptchaVerifier = recaptchaVerifier;
 
       return recaptchaVerifier;
     } else {
