@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Chat.jsx", "src/components/PhoneAuth.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Chat.jsx", "src/components/PhoneAuth.jsx", "src/utils/firebaseConfig.js", "src/components/ProtectedRoute.jsx", "src/components/Layout.jsx"],
   "exclude": ["node_modules"]
 }
